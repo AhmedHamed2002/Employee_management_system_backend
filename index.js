@@ -7,14 +7,14 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
 app.use(
-    cors({
-        origin: [
-            "https://employee-management-system-backend-nine.vercel.app",
-            "http://localhost:4000",
-        ],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,
-    })
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://employee-management-system-frontend.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
 );
 
 mongoose.connect(process.env.MONGO_URL);
